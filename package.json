@@ -1,0 +1,33 @@
+{
+    "name": "js-in-string",
+    "displayName": "js-in-string",
+    "description": "Support for files containing javascript code in a backtick-quoted string",
+    "version": "1.0.0",
+    "publisher": "waverlyai",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/waverlyai/js-in-string.git"
+    },    
+    "contributes": {
+        "languages": [{
+            "id": "jsinstring",
+            "aliases": ["Javascript in String", "jsinstring"],
+            "extensions": [".str.js"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "jsinstring",
+            "scopeName": "source.ejs",
+            "path": "./syntaxes/jsinstring.tmLanguage.json",
+            "embeddedLanguages": {
+                "meta.embedded.block.javascript": "javascript"
+            }
+        }]
+    }
+}

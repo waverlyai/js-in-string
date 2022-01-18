@@ -1,0 +1,24 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Javascript in String",
+	"patterns": [
+		{
+			"include": "#code"
+		}
+	],
+	"repository": {
+		"code": {
+			"name": "meta.embedded.block.javascript",
+			"begin": "`",
+			"end": "`",
+            "beginCaptures": {
+                "0": { "name": "punctuation.code.open" }
+            },
+            "endCaptures": {
+                "0": { "name": "punctuation.code.close" }
+            },			
+			"patterns": [{"include": "source.js"}]
+		}
+	},
+	"scopeName": "source.ejs"
+}
