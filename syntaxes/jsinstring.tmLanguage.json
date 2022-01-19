@@ -1,44 +1,48 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"injectionSelector": "L:source.js, L:source.ts, L:source.tsx",
 	"name": "Javascript in String",
 	"patterns": [{"include": "#code"}, {"include": "#cssCode"}, {"include": "#htmlCode"}],
 	"repository": {
 		"code": {
 			"name": "meta.embedded.block.javascript",
-			"begin": "\\/\\*\\s*js\\s*\\*\\/\\s*(`)",
+			"begin": "(\\/\\*\\s*js\\s*\\*\\/)\\s*(`)",
 			"end": "`",
             "beginCaptures": {
-                "1": { "name": "punctuation.code.open" }
+                "1": { "name": "comment.block.jsis" },
+                "2": { "name": "punctuation.definition.string.begin.jsis" }
             },
             "endCaptures": {
-                "0": { "name": "punctuation.code.close" }
+                "0": { "name": "punctuation.definition.string.end.jsis" }
             },
 			"patterns": [{"include": "source.js"}]
 		},
 		"cssCode": {
 			"name": "meta.embedded.block.css",
-			"begin": "\\/\\*\\s*css\\s*\\*\\/\\s*(`)",
+			"begin": "(\\/\\*\\s*css\\s*\\*\\/)\\s*(`)",
 			"end": "`",
             "beginCaptures": {
-                "1": { "name": "punctuation.code.open" }
+                "1": { "name": "comment.block.jsis" },
+                "2": { "name": "punctuation.definition.string.begin.jsis" }
             },
             "endCaptures": {
-                "0": { "name": "punctuation.code.close" }
+                "0": { "name": "punctuation.definition.string.end.jsis" }
             },			
 			"patterns": [{"include": "source.css"}]
 		},
 		"htmlCode": {
-			"name": "meta.embedded.block.html",
-			"begin": "\\/\\*\\s*html\\s*\\*\\/\\s*(`)",
+			"name": "meta.embedded.block.css",
+			"begin": "(\\/\\*\\s*html\\s*\\*\\/)\\s*(`)",
 			"end": "`",
             "beginCaptures": {
-                "1": { "name": "punctuation.code.open" }
+                "1": { "name": "comment.block.jsis" },
+                "2": { "name": "punctuation.definition.string.begin.jsis" }
             },
             "endCaptures": {
-                "0": { "name": "punctuation.code.close" }
+                "0": { "name": "punctuation.definition.string.end.jsis" }
             },			
-			"patterns": [{"include": "text.html.basic"}]
+			"patterns": [{"include": "text.html.derivative"}]
 		}
 	},
-	"scopeName": "source.ejs"
+	"scopeName": "source.js.tsx.jsis"
 }

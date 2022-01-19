@@ -4,6 +4,10 @@ All notable changes to the "js-in-string" extension will be documented in this f
 
 This format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## [2.0.0] - 2022-01-19
+
+- Now using an injection grammar rather than a regular one.
+
 ## [1.1.0] - 2022-01-18
 
 - Added support for CSS and HTML.

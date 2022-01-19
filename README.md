@@ -1,6 +1,8 @@
 # js-in-string support for javascript in string literals
 
-This very basic VSCode extension supports syntax highlighting file with the `.str.js` or `.str.ts` extensions which contains javascript, css or html code in backtick-quoted string literals. For example:
+This very basic VSCode extension supports syntax highlighting for `.js` and `.ts` files extensions which contains javascript, css or html code in backtick-quoted string literals. (It would be better names `code-in-string`, but it started just supporting javascript.)
+
+For example:
 
 ```javascript
 export const code= /* js */ `
@@ -18,7 +20,7 @@ export const f = (arr) => {
 
 In the above code, the entire code between the backticks would be correctly syntax-highlighted by this extension.
 
-Files of type `.str.js` are useful for embedding javascript code inside other javascript files, however without this extension, all the important code is highlighted as a string.
+This is useful for embedding javascript code inside other javascript files, however without this extension, all the important code is highlighted as a string.
 
 Other supported languages are CSS and HTML:
 
@@ -45,6 +47,10 @@ Simple syntax highlighting.
 ![Syntax highlighting](images/syntax-highlighting.png)
 
 ## Release Notes
+
+### 2.0.0
+
+- Now using an injection grammar rather than a regular one.
 
 ### 1.1.0
 
