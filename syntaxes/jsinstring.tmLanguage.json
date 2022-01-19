@@ -1,23 +1,43 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Javascript in String",
-	"patterns": [
-		{
-			"include": "#code"
-		}
-	],
+	"patterns": [{"include": "#code"}, {"include": "#cssCode"}, {"include": "#htmlCode"}],
 	"repository": {
 		"code": {
 			"name": "meta.embedded.block.javascript",
-			"begin": "`",
+			"begin": "\\/\\*\\s*js\\s*\\*\\/\\s*(`)",
 			"end": "`",
             "beginCaptures": {
-                "0": { "name": "punctuation.code.open" }
+                "1": { "name": "punctuation.code.open" }
+            },
+            "endCaptures": {
+                "0": { "name": "punctuation.code.close" }
+            },
+			"patterns": [{"include": "source.js"}]
+		},
+		"cssCode": {
+			"name": "meta.embedded.block.css",
+			"begin": "\\/\\*\\s*css\\s*\\*\\/\\s*(`)",
+			"end": "`",
+            "beginCaptures": {
+                "1": { "name": "punctuation.code.open" }
             },
             "endCaptures": {
                 "0": { "name": "punctuation.code.close" }
             },			
-			"patterns": [{"include": "source.js"}]
+			"patterns": [{"include": "source.css"}]
+		},
+		"htmlCode": {
+			"name": "meta.embedded.block.html",
+			"begin": "\\/\\*\\s*html\\s*\\*\\/\\s*(`)",
+			"end": "`",
+            "beginCaptures": {
+                "1": { "name": "punctuation.code.open" }
+            },
+            "endCaptures": {
+                "0": { "name": "punctuation.code.close" }
+            },			
+			"patterns": [{"include": "text.html.basic"}]
 		}
 	},
 	"scopeName": "source.ejs"

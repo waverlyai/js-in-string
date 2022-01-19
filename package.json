@@ -1,8 +1,8 @@
 {
     "name": "js-in-string",
     "displayName": "js-in-string",
-    "description": "Support for files containing javascript code in a backtick-quoted string",
-    "version": "1.0.0",
+    "description": "Support for files containing javascript, css and html code in a backtick-quoted string",
+    "version": "1.1.0",
     "publisher": "waverlyai",
     "engines": {
         "vscode": "^1.63.0"
@@ -18,7 +18,7 @@
         "languages": [{
             "id": "jsinstring",
             "aliases": ["Javascript in String", "jsinstring"],
-            "extensions": [".str.js"],
+            "extensions": [".str.js", ".str.ts"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
@@ -26,6 +26,8 @@
             "scopeName": "source.ejs",
             "path": "./syntaxes/jsinstring.tmLanguage.json",
             "embeddedLanguages": {
+                "meta.embedded.block.css": "css",
+                "meta.embedded.block.html": "html",
                 "meta.embedded.block.javascript": "javascript"
             }
         }]
